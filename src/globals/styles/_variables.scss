@@ -1,0 +1,27 @@
+:host {
+  /* Scoped CSS variables only for this component */
+  --button-font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --button-font-weight: 700;
+  --button-line-height: 1;
+
+  --button-border: 0;
+  --button-border-radius: 3em;
+
+  --button-cursor: pointer;
+
+  --button-primary-bg: #555ab9;
+  --button-primary-color: #ffffff;
+
+  --button-secondary-bg: transparent;
+  --button-secondary-color: #333;
+  --button-secondary-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+  --button-padding-small: 10px 16px;
+  --button-font-size-small: 12px;
+
+  --button-padding-medium: 11px 20px;
+  --button-font-size-medium: 14px;
+
+  --button-padding-large: 12px 24px;
+  --button-font-size-large: 16px;
+}

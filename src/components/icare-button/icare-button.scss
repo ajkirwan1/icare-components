@@ -1,0 +1,32 @@
+@use '../../globals/styles/variables' as vars;
+
+button {
+  cursor: var(--button-cursor);
+  border: var(--button-border);
+  border-radius: var(--button-border-radius);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  font-family: var(--button-font-family);
+  padding: var(--button-padding-medium);
+  font-size: var(--button-font-size-medium);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-color);
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+:host([variant='secondary']) button {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-color);
+  box-shadow: var(--button-secondary-shadow);
+}
+
+:host([size='small']) button {
+  padding: var(--button-padding-small);
+  font-size: var(--button-font-size-small);
+}
+
+:host([size='large']) button {
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size-large);
+}
