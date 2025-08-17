@@ -9,6 +9,7 @@ export const config: Config = {
       includePaths: [path.resolve(__dirname, 'src/globals/styles')],
     }),
   ],
+  globalStyle: 'src/globals/styles/_globals.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -25,6 +26,10 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        { src: 'test.html' },
+        { src: '../public/images' , dest: 'images'},// Add this to copy test.html
+      ],
     },
   ],
   testing: {

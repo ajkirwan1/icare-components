@@ -1,4 +1,5 @@
 :host {
+  font-family: var(--icare-font-family);
   display: block;
   height: 100vh;         /* full viewport height */
   width: 100vw;          /* full viewport width */
@@ -49,14 +50,4 @@
 .hero-overlay.bottom {
   bottom: 0;
   justify-content: flex-end;
-}
-
-.hero-overlay h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.hero-overlay p {
-  font-size: 1.5rem;
-  margin: 0.5rem 0 0 0;
 }
