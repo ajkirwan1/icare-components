@@ -14,7 +14,7 @@ export class IcareHeader {
       <Host>
          <header>
           <div>
-            contents
+            <icare-logo />
           </div>
             {this.loggedIn ? <> <icare-button>Logout</icare-button>
              </> :  <div class="button-wrapper"><icare-button>Login</icare-button>
