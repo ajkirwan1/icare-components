@@ -1,0 +1,32 @@
+@use '../../globals/styles/mixins' as mixins;
+
+:host {
+  display: block;
+  @include mixins.card-surface();
+  // @include mixins.card-variant(outlined);
+  @include mixins.export-css-vars()
+}
+
+:host([variant="outlined"]) { @include mixins.card-variant(outlined); }
+:host([variant="flat"])     { @include mixins.card-variant(flat); }
+
+:host([interactive]) {
+  @include mixins.card-interactive();
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+:host([interactive][variant="outlined"]:hover) {
+  transform: none !important;  /* stop movement */
+  box-shadow: var(--icare-card-hover-shadow, 0 4px 10px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.08));
+  border-color: var(--icare-color-green-secondary);
+}
+
+:host([interactive]:hover):not([variant]),
+:host([interactive][variant="elevated"]:hover) {
+  transform: translateY(-1px);
+  box-shadow: var(--icare-card-hover-shadow, 0 4px 10px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.08));
+  background: inherit;
+}
+
+.card__body { @include mixins.card-section(); }

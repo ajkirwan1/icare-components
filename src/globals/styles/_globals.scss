@@ -1,36 +1,30 @@
+@use "./variables" as vars;
+@use "./mixins" as mixins;
+
 :root {
-  --icare-font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --icare-font-weight-regular: 400;
-  --icare-font-weight-semibold: 600;
-  --icare-font-weight-bold: 700;
+  @include mixins.export-css-vars();
+  // @include mixins.flex(row, center, center);
+}
 
-  /* Font sizes */
-  --icare-font-size-xs: 0.75rem;
-  --icare-font-size-sm: 0.875rem;
-  --icare-font-size-md: 1rem;
-  --icare-font-size-lg: 1.125rem;
-  --icare-font-size-xl: 1.5rem;
-  --icare-font-size-xxl: 2rem;
-  --icare-font-size-xxxl: 3rem;
-
-  /* Line heights */
-  --icare-line-height-tight: 1.2;
-  --icare-line-height-normal: 1.5;
-  --icare-line-height-loose: 1.75;
+body {
+  font-family: var(--icare-font-family);
+  font-size: var(--icare-font-size-md);
+  line-height: var(--icare-line-height-normal);
+  margin: 0;
 }
 
 h1 {
-  font-size: var(--icare-font-size-xxl);
+  font-size: var(--icare-font-size-h1);
   font-weight: var(--icare-font-weight-bold);
   line-height: var(--icare-line-height-tight);
   margin: 0;
-  color: white; /* Since they're on dark backgrounds */
+  color: var(--icare-color-text-on-light); // Since they're on dark backgrounds
 }
 
 p {
-  font-size: var(--icare-font-size-xxl);
+  font-size: var(--icare-font-size-p);
   font-weight: var(--icare-font-weight-regular);
   line-height: var(--icare-line-height-normal);
   margin: 0.5rem 0 0 0;
-  color: white; /* Since they're on dark backgrounds */
+  color: var(--icare-color-text-on-light); // Since they're on dark backgrounds
 }
