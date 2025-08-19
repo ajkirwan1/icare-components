@@ -16,16 +16,20 @@
 
 ### Used by
 
+ - [icare-hero](../icare-hero)
  - [icare-page](../icare-page)
 
 ### Depends on
 
+- [icare-logo](../icare-logo)
 - [icare-button](../icare-button)
 
 ### Graph
 ```mermaid
 graph TD;
+  icare-header --> icare-logo
   icare-header --> icare-button
+  icare-hero --> icare-header
   icare-page --> icare-header
   style icare-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
