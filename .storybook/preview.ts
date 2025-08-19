@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/web-components-vite';
 import { defineCustomElements } from '../loader'; // Adjust the path
-
+import '../src/globals/styles/_globals.scss';
 
 defineCustomElements();
 

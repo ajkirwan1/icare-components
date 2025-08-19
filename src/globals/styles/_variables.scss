@@ -1,27 +1,94 @@
-:host {
-  /* Scoped CSS variables only for this component */
-  --button-font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --button-font-weight: 700;
-  --button-line-height: 1;
+// Design tokens and helpers for iCare components
+// - Tokens are defined as Sass variables and maps with !default so downstream
+//   consumers can override them.
+// - A mixin is provided to export tokens as CSS Custom Properties for runtime theming,
+//   including responsive overrides at breakpoints.
 
-  --button-border: 0;
-  --button-border-radius: 3em;
+@use "sass:map";
 
-  --button-cursor: pointer;
+// Prefix for generated CSS custom properties
+$css-var-prefix: "icare" !default;
 
-  --button-primary-bg: #555ab9;
-  --button-primary-color: #ffffff;
+// Typography
+$font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 
-  --button-secondary-bg: transparent;
-  --button-secondary-color: #333;
-  --button-secondary-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+$font-weights: (
+  regular: 400,
+  semibold: 600,
+  bold: 700
+) !default;
 
-  --button-padding-small: 10px 16px;
-  --button-font-size-small: 12px;
+// Base font sizes (mobile-first)
+$font-sizes: (
+  p: 0.75rem,   // 12px
+  h1: 0.875rem,  // 14px
+) !default;
 
-  --button-padding-medium: 11px 20px;
-  --button-font-size-medium: 14px;
+$line-heights: (
+  tight: 1.2,
+  normal: 1.5,
+  loose: 1.75
+) !default;
 
-  --button-padding-large: 12px 24px;
-  --button-font-size-large: 16px;
-}
+// Colors
+$colors: (
+  text-on-light: #333333,
+  text-on-dark: #ffffff,
+  green-secondary: #5B7562
+
+) !default;
+
+// Breakpoints (use rem so they scale with root font-size)
+$breakpoints: (
+  sm: 36rem,  // ~576px
+  md: 48rem,  // ~768px
+  lg: 64rem,  // ~1024px
+  xl: 80rem   // ~1280px
+) !default;
+
+// Optional responsive font-size overrides (mobile-first).
+// Only include keys you want to change; others will inherit base $font-sizes.
+// Example values shown — tweak to your scale.
+$responsive-font-sizes: (
+  md: (
+    p: 0.8125rem,  // 13px
+    h1: 0.9375rem,  // 15px
+    md: 1.0625rem,  // 17px
+    lg: 1.25rem,    // 20px
+    xl: 1.75rem,    // 28px
+    xxl: 2.25rem,   // 36px
+    xxxl: 3.5rem    // 56px
+  ),
+  lg: (
+    p: 0.875rem,   // 14px
+    h1: 1rem,       // 16px
+    md: 1.125rem,   // 18px
+    lg: 1.375rem,   // 22px
+    xl: 2rem,       // 32px
+    xxl: 2.5rem,    // 40px
+    xxxl: 4rem      // 64px
+  ),
+  xl: (
+    md: 1.1875rem,  // 19px
+    lg: 1.5rem,     // 24px
+    xl: 2.25rem,    // 36px
+    xxl: 3rem,      // 48px
+    xxxl: 4.5rem    // 72px
+  )
+) !default;
+
+$paddings: (
+  xs: 0.25rem,   // 4px
+  sm: 0.5rem,    // 8px
+  md: 1rem,      // 16px
+  lg: 1.5rem,    // 24px
+  xl: 2rem       // 32px
+) !default;
+
+$border-radii: (
+  sm: 0.125rem,  // 2px
+  md: 0.25rem,   // 4px
+  lg: 0.5rem,    // 8px
+  xl: 1rem       // 16px
+) !default;
+

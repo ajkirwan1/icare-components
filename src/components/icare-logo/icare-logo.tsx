@@ -5,11 +5,11 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'icare-logo.scss',
   shadow: true,
 })
-export class IcareLogo {
+export class ICareLogo {
   render() {
     return (
       <Host>
-        <slot></slot>
+        <img src="images/icare-logo.svg" alt="iCare Logo" />
       </Host>
     );
   }
