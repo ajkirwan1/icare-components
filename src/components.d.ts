@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IcareAvatar {
     }
+    interface IcareBanner {
+    }
     interface IcareButton {
         /**
           * @default 'Click'
@@ -66,9 +68,30 @@ export namespace Components {
          */
         "overlayPosition": 'top' | 'center' | 'bottom';
     }
+    interface IcareHeroNew {
+    }
     interface IcareLogo {
     }
     interface IcarePage {
+    }
+    interface IcareWebBlock {
+        "imgAlt": string;
+        "imgSrc": string;
+        /**
+          * @default 'text-left'
+         */
+        "layout": 'text-left' | 'text-right' | 'text-top' | 'text-bottom';
+    }
+    interface IcareWebCard {
+        "imageAlt": string;
+        "imageSrc": string;
+    }
+    interface IcareWebMinihero {
+        /**
+          * @default 'Mini Hero Title'
+         */
+        "imgAlt": string;
+        "imgSrc": string;
     }
     interface MyComponent {
         /**
@@ -91,6 +114,12 @@ declare global {
     var HTMLIcareAvatarElement: {
         prototype: HTMLIcareAvatarElement;
         new (): HTMLIcareAvatarElement;
+    };
+    interface HTMLIcareBannerElement extends Components.IcareBanner, HTMLStencilElement {
+    }
+    var HTMLIcareBannerElement: {
+        prototype: HTMLIcareBannerElement;
+        new (): HTMLIcareBannerElement;
     };
     interface HTMLIcareButtonElement extends Components.IcareButton, HTMLStencilElement {
     }
@@ -122,6 +151,12 @@ declare global {
         prototype: HTMLIcareHeroElement;
         new (): HTMLIcareHeroElement;
     };
+    interface HTMLIcareHeroNewElement extends Components.IcareHeroNew, HTMLStencilElement {
+    }
+    var HTMLIcareHeroNewElement: {
+        prototype: HTMLIcareHeroNewElement;
+        new (): HTMLIcareHeroNewElement;
+    };
     interface HTMLIcareLogoElement extends Components.IcareLogo, HTMLStencilElement {
     }
     var HTMLIcareLogoElement: {
@@ -134,6 +169,24 @@ declare global {
         prototype: HTMLIcarePageElement;
         new (): HTMLIcarePageElement;
     };
+    interface HTMLIcareWebBlockElement extends Components.IcareWebBlock, HTMLStencilElement {
+    }
+    var HTMLIcareWebBlockElement: {
+        prototype: HTMLIcareWebBlockElement;
+        new (): HTMLIcareWebBlockElement;
+    };
+    interface HTMLIcareWebCardElement extends Components.IcareWebCard, HTMLStencilElement {
+    }
+    var HTMLIcareWebCardElement: {
+        prototype: HTMLIcareWebCardElement;
+        new (): HTMLIcareWebCardElement;
+    };
+    interface HTMLIcareWebMiniheroElement extends Components.IcareWebMinihero, HTMLStencilElement {
+    }
+    var HTMLIcareWebMiniheroElement: {
+        prototype: HTMLIcareWebMiniheroElement;
+        new (): HTMLIcareWebMiniheroElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -142,18 +195,25 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "icare-avatar": HTMLIcareAvatarElement;
+        "icare-banner": HTMLIcareBannerElement;
         "icare-button": HTMLIcareButtonElement;
         "icare-card": HTMLIcareCardElement;
         "icare-caregiver-profile-card": HTMLIcareCaregiverProfileCardElement;
         "icare-header": HTMLIcareHeaderElement;
         "icare-hero": HTMLIcareHeroElement;
+        "icare-hero-new": HTMLIcareHeroNewElement;
         "icare-logo": HTMLIcareLogoElement;
         "icare-page": HTMLIcarePageElement;
+        "icare-web-block": HTMLIcareWebBlockElement;
+        "icare-web-card": HTMLIcareWebCardElement;
+        "icare-web-minihero": HTMLIcareWebMiniheroElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface IcareAvatar {
+    }
+    interface IcareBanner {
     }
     interface IcareButton {
         /**
@@ -213,9 +273,30 @@ declare namespace LocalJSX {
          */
         "overlayPosition"?: 'top' | 'center' | 'bottom';
     }
+    interface IcareHeroNew {
+    }
     interface IcareLogo {
     }
     interface IcarePage {
+    }
+    interface IcareWebBlock {
+        "imgAlt"?: string;
+        "imgSrc"?: string;
+        /**
+          * @default 'text-left'
+         */
+        "layout"?: 'text-left' | 'text-right' | 'text-top' | 'text-bottom';
+    }
+    interface IcareWebCard {
+        "imageAlt"?: string;
+        "imageSrc"?: string;
+    }
+    interface IcareWebMinihero {
+        /**
+          * @default 'Mini Hero Title'
+         */
+        "imgAlt"?: string;
+        "imgSrc"?: string;
     }
     interface MyComponent {
         /**
@@ -233,13 +314,18 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "icare-avatar": IcareAvatar;
+        "icare-banner": IcareBanner;
         "icare-button": IcareButton;
         "icare-card": IcareCard;
         "icare-caregiver-profile-card": IcareCaregiverProfileCard;
         "icare-header": IcareHeader;
         "icare-hero": IcareHero;
+        "icare-hero-new": IcareHeroNew;
         "icare-logo": IcareLogo;
         "icare-page": IcarePage;
+        "icare-web-block": IcareWebBlock;
+        "icare-web-card": IcareWebCard;
+        "icare-web-minihero": IcareWebMinihero;
         "my-component": MyComponent;
     }
 }
@@ -248,13 +334,18 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "icare-avatar": LocalJSX.IcareAvatar & JSXBase.HTMLAttributes<HTMLIcareAvatarElement>;
+            "icare-banner": LocalJSX.IcareBanner & JSXBase.HTMLAttributes<HTMLIcareBannerElement>;
             "icare-button": LocalJSX.IcareButton & JSXBase.HTMLAttributes<HTMLIcareButtonElement>;
             "icare-card": LocalJSX.IcareCard & JSXBase.HTMLAttributes<HTMLIcareCardElement>;
             "icare-caregiver-profile-card": LocalJSX.IcareCaregiverProfileCard & JSXBase.HTMLAttributes<HTMLIcareCaregiverProfileCardElement>;
             "icare-header": LocalJSX.IcareHeader & JSXBase.HTMLAttributes<HTMLIcareHeaderElement>;
             "icare-hero": LocalJSX.IcareHero & JSXBase.HTMLAttributes<HTMLIcareHeroElement>;
+            "icare-hero-new": LocalJSX.IcareHeroNew & JSXBase.HTMLAttributes<HTMLIcareHeroNewElement>;
             "icare-logo": LocalJSX.IcareLogo & JSXBase.HTMLAttributes<HTMLIcareLogoElement>;
             "icare-page": LocalJSX.IcarePage & JSXBase.HTMLAttributes<HTMLIcarePageElement>;
+            "icare-web-block": LocalJSX.IcareWebBlock & JSXBase.HTMLAttributes<HTMLIcareWebBlockElement>;
+            "icare-web-card": LocalJSX.IcareWebCard & JSXBase.HTMLAttributes<HTMLIcareWebCardElement>;
+            "icare-web-minihero": LocalJSX.IcareWebMinihero & JSXBase.HTMLAttributes<HTMLIcareWebMiniheroElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

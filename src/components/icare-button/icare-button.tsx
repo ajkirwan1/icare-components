@@ -7,7 +7,7 @@ import { Component, Prop, Host, h } from '@stencil/core';
 })
 export class IcareButton {
   @Prop() label = 'Click';
-  @Prop() variant: 'primary' | 'secondary' = 'primary';
+  @Prop({ reflect: true }) variant: 'primary' | 'secondary' = 'primary';
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
 
   render() {

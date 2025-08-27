@@ -10,7 +10,9 @@ export class IcarePage {
     return (
       <Host>
         <icare-header></icare-header>
-        <slot></slot>
+        <main>
+          <slot></slot>
+        </main>
       </Host>
     );
   }
