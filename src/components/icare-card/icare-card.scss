@@ -4,7 +4,7 @@
   display: block;
   @include mixins.card-surface();
   // @include mixins.card-variant(outlined);
-  @include mixins.export-css-vars()
+  // @include mixins.export-css-vars()
 }
 
 :host([variant="outlined"]) { @include mixins.card-variant(outlined); }

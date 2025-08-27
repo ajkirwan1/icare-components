@@ -1,0 +1,56 @@
+@use "./mixins" as mixins;
+
+:host {
+  display: block;
+  border: 1px solid var(--icare-color-green-secondary);
+  border-radius: var(--icare-border-radius-lg);
+  overflow: hidden;
+  height: 100%;
+
+  figure {
+    margin: 0;
+  }
+
+  .content-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .media {
+    flex: 0 0 40%;
+    max-width: 40%;
+    overflow: hidden; /* clip image to rounded corners if needed */
+    display: block;
+    /* optional: keep a stable aspect ratio for the image container
+       uncomment if you want fixed ratio:
+    aspect-ratio: 4 / 3;
+    */
+    height: 100%;
+    min-height: 0;
+  }
+
+  .card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;   // optional, ignored when height:auto
+    object-position: center;
+  }
+
+
+  .text-content {
+    flex: 1 1 60%;
+    max-width: 60%;
+    min-width: 0; /* allow wrapping instead of overflow */
+
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+
+}

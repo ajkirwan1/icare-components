@@ -4,9 +4,13 @@
 @mixin export-css-vars(
   $prefix: vars.$css-var-prefix,
   $responsive-font-sizes: vars.$responsive-font-sizes,
-  $breakpoints: vars.$breakpoints
+  $breakpoints: vars.$breakpoints,
+  $debug: false
 ) {
-  /* Base tokens (emitted into the current selector, e.g., :root) */
+  /* Capture the selector where mixin is included (e.g. :root) */
+  $scope: if(& == null or & == '', ':root', &);
+
+  /* Base tokens (non‑responsive) */
   --#{$prefix}-font-family: #{vars.$font-family};
 
   @each $name, $value in vars.$font-weights {
@@ -29,11 +33,20 @@
     --#{$prefix}-padding-#{$name}: #{$value};
   }
 
+  @each $name, $value in vars.$button-paddings {
+    --#{$prefix}-button-padding-#{$name}: #{$value};
+  }
+
   @each $name, $value in vars.$border-radii {
     --#{$prefix}-border-radius-#{$name}: #{$value};
   }
 
-  /* Responsive overrides: re-apply the SAME selector inside the media query */
+  @if $debug {
+    --#{$prefix}-debug-base-selector: '#{$scope}';
+    --#{$prefix}-debug-font-h2-base: var(--#{$prefix}-font-size-h2);
+  }
+
+  /* Responsive overrides */
   @if $responsive-font-sizes != null {
     @each $bp, $overrides in $responsive-font-sizes {
       $min-width: map.get($breakpoints, $bp);
@@ -41,10 +54,17 @@
       @if $min-width == null {
         @warn "Breakpoint `#{$bp}` not found in $breakpoints map; skipping.";
       } @else {
-        @media (min-width: $min-width) {
-          #{&} { // re-enter where this mixin was included (e.g., :root)
-            @each $name, $value in $overrides {
-              --#{$prefix}-font-size-#{$name}: #{$value};
+        /* Lift @media to root so we don't get `:root :root` */
+        @at-root {
+          @media (min-width: $min-width) {
+            #{$scope} {
+              @each $name, $value in $overrides {
+                --#{$prefix}-font-size-#{$name}: #{$value};
+              }
+              @if $debug {
+                --#{$prefix}-debug-active-bp: '#{$bp}';
+                --#{$prefix}-debug-font-h2-current: var(--#{$prefix}-font-size-h2);
+              }
             }
           }
         }

@@ -1,32 +1,55 @@
 @use '../../globals/styles/variables' as vars;
 
 button {
-  cursor: var(--button-cursor);
-  border: var(--button-border);
-  border-radius: var(--button-border-radius);
-  font-weight: var(--button-font-weight);
-  line-height: var(--button-line-height);
-  font-family: var(--button-font-family);
-  padding: var(--button-padding-medium);
-  font-size: var(--button-font-size-medium);
-  background-color: var(--button-primary-bg);
-  color: var(--button-primary-color);
-  transition: background-color 0.3s ease;
+  // cursor: var(--button-cursor);
+  // border: var(--button-border);
+  border-radius: var(--icare-border-radius-xxl);
+  // font-weight: var(--button-font-weight);
+  // line-height: var(--button-line-height);
+  // font-family: var(--button-font-family);
+  padding: var(--icare-button-padding-lg);
+  // font-size: var(--button-font-size-medium);
+  background-color: var(--icare-color-green-primary);
+  color: white;
+  // transition: background-color 0.3s ease;
   border: none;
+  transition:
+  background-color .18s ease,
+  color .18s ease,
+  box-shadow .18s ease,
+  transform .12s ease;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+:host([variant='primary']) button {
+  &:hover {
+    background-color: var(--icare-color-green-secondary);
+    cursor: pointer;
+  }
 }
 
 :host([variant='secondary']) button {
-  background-color: var(--button-secondary-bg);
-  color: var(--button-secondary-color);
-  box-shadow: var(--button-secondary-shadow);
+  background-color: white;
+  color: var(--icare-color-green-primary);
+  border: 1px solid rgb(221, 221, 221);
 }
 
-:host([size='small']) button {
-  padding: var(--button-padding-small);
-  font-size: var(--button-font-size-small);
+:host([variant='secondary']) button:hover:not(:disabled),
+:host([variant='secondary']) button:focus-visible:not(:disabled) {
+  // background-image: linear-gradient(180deg, rgba(212, 212, 212, 0.05), rgba(0,0,0,0));
+  border-color: var(--icare-color-green-secondary);
+  // box-shadow: 0 4px 12px -2px rgba(0,0,0,.15);
+  color: black  ;
+  border: 1px solid var(--icare-color-green-secondary);
+  cursor: pointer;
 }
 
-:host([size='large']) button {
-  padding: var(--button-padding-large);
-  font-size: var(--button-font-size-large);
-}
+// :host([size='small']) button {
+//   padding: var(--button-padding-small);
+//   font-size: var(--button-font-size-small);
+// }
+
+// :host([size='large']) button {
+//   padding: var(--button-padding-large);
+//   font-size: var(--button-font-size-large);
+// }
