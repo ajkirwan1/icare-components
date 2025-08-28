@@ -17,7 +17,7 @@
 ### Used by
 
  - [icare-hero](../icare-hero)
- - [icare-page](../icare-page)
+ - [icare-hero-new](../icare-hero-new)
 
 ### Depends on
 
@@ -30,7 +30,7 @@ graph TD;
   icare-header --> icare-logo
   icare-header --> icare-button
   icare-hero --> icare-header
-  icare-page --> icare-header
+  icare-hero-new --> icare-header
   style icare-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

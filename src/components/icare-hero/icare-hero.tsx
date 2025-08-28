@@ -53,17 +53,19 @@ export class IcareHero {
   render() {
     return (
       <Host>
-        <img
-          src={this.imageSrc}
-          alt={this.imageAlt}
-          class="image-wrapper"
-        />
-        <div class="header">
-          <icare-header />
-        </div>
-        <div class={`hero-overlay ${this.overlayPosition}`}>
-          <slot name="overlay"></slot>
-        </div>
+        <section>
+          <img
+            src={this.imageSrc}
+            alt={this.imageAlt}
+            class="image-wrapper"
+          />
+          <div class="header">
+            <icare-header />
+          </div>
+          <div class={`hero-overlay ${this.overlayPosition}`}>
+            <slot name="overlay"></slot>
+          </div>
+        </section>
       </Host>
     );
   }

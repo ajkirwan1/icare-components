@@ -2,8 +2,8 @@
   display: block;
 
   main {
-    max-width: 90vw;
-    margin: 5vh auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem); /* responsive side padding */
+    margin-inline: auto;
+    max-width: 1200px; /* optional */
   }
-
 }

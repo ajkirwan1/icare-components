@@ -2,7 +2,7 @@ import { html } from 'lit';
 import 'icare-components'; // Ensure this resolves to your built components
 
 export default {
-  title: 'Components/IcareHeader',
+  title: 'Components/ICare Header',
   component: 'icare-header',
   argTypes: {
     loggedIn: {

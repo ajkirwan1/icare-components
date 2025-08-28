@@ -9,10 +9,13 @@ export class IcarePage {
   render() {
     return (
       <Host>
-        <icare-header></icare-header>
+        <icare-hero-new></icare-hero-new>
         <main>
-          <slot></slot>
+          <div class="content">
+            <slot></slot>
+          </div>
         </main>
+        <icare-footer></icare-footer>
       </Host>
     );
   }
