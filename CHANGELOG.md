@@ -1,3 +1,10 @@
+# [1.1.0-develop.3](https://github.com/ajkirwan1/icare-components/compare/v1.1.0-develop.2...v1.1.0-develop.3) (2025-08-28)
+
+
+### Features
+
+* added more components ([7dc4cd6](https://github.com/ajkirwan1/icare-components/commit/7dc4cd6dbb1bf242bc473807893ae00ee12af3a6))
+
 # [1.1.0-develop.2](https://github.com/ajkirwan1/icare-components/compare/v1.1.0-develop.1...v1.1.0-develop.2) (2025-08-27)
 
 
