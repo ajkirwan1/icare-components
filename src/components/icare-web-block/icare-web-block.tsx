@@ -16,18 +16,18 @@ export class IcareWebBlock {
 
     return (
       <Host>
-        <div class="text-wrapper">
-          <div>
-            <h2><slot name="header-contents"></slot></h2>
-            <p><slot name="body-contents"></slot></p>
+          <div class="text-wrapper">
+            <div>
+              <h2><slot name="header-contents"></slot></h2>
+              <p><slot name="body-contents"></slot></p>
+            </div>
+            <div class="button-group">
+              <icare-button variant='primary'>Get Started</icare-button>
+              <icare-button variant='secondary'>More Information</icare-button>
+            </div>
           </div>
-          <div class="button-group">
-            <icare-button variant='primary'>Get Started</icare-button>
-            <icare-button variant='secondary'>More Information</icare-button>
-          </div>
-        </div>
-        <figure>
-          <img src={this.imgSrc} alt={this.imgAlt}></img>
+          <figure>
+            <img src={this.imgSrc} alt={this.imgAlt}></img>
         </figure>
       </Host>
     );

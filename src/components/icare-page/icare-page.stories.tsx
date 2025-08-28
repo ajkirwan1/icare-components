@@ -12,33 +12,40 @@ export default {
 
 const Template = () => html`
   <icare-page>
-    <icare-web-block img-src="/images/heros/who-we-are.jpg" layout="text-left" >
+  <icare-section>
+   <icare-web-block img-src="/images/web-cards/web-card-image-1.jpg" layout="text-right" >
         <span slot="header-contents">Care coordination made clear.</span>
         <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
     </icare-web-block>
-    <icare-web-block img-src="/images/web-cards/web-card-image-1.jpg" layout="text-right" >
-        <span slot="header-contents">Care coordination made clear.</span>
-        <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
-    </icare-web-block>
+  </icare-section>
+
+  <icare-section>
     <icare-web-block img-src="/images/web-cards/web-card-image-2.jpg" layout="text-top" >
         <span slot="header-contents">Care coordination made clear.</span>
         <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
     </icare-web-block>
+  </icare-section>
+  <icare-section>
     <div style="display: flex; gap: 2rem;">
-    <icare-web-block img-src="/images/web-cards/web-card-image-3.jpg" layout="text-bottom" >
-        <span slot="header-contents">Care coordination made clear.</span>
-        <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
-    </icare-web-block>
-        <icare-web-block img-src="/images/web-cards/web-card-image-2.jpg" layout="text-bottom" >
-        <span slot="header-contents">Care coordination made clear.</span>
-        <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
-    </icare-web-block>
-        </icare-web-block>
-        <icare-web-block img-src="/images/web-cards/web-card-image-1.jpg" layout="text-bottom" >
-        <span slot="header-contents">Care coordination made clear.</span>
-        <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
-    </icare-web-block>
+      <icare-web-block img-src="/images/web-cards/web-card-image-3.jpg" layout="text-bottom" >
+          <span slot="header-contents">Care coordination made clear.</span>
+          <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
+      </icare-web-block>
+          <icare-web-block img-src="/images/web-cards/web-card-image-2.jpg" layout="text-bottom" >
+          <span slot="header-contents">Care coordination made clear.</span>
+          <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
+      </icare-web-block>
+          </icare-web-block>
+          <icare-web-block img-src="/images/web-cards/web-card-image-1.jpg" layout="text-bottom" >
+          <span slot="header-contents">Care coordination made clear.</span>
+          <span slot="body-contents">ICare helps teams and families keep critical care information organized, current, and accessible—so attention stays where it matters most.</span>
+      </icare-web-block>
     </div>
+    </icare-section>
+    <icare-section class="full-bleed">
+      <icare-banner class="full-bleed" img-src="/images/heros/who-we-are.jpg" img-alt="Banner Image"></icare-banner>
+    </icare-section>
+     <icare-section>
      <div style="display: flex; gap: 2rem;">
       <icare-web-minihero img-src="/images/heros/hero-landing-page.jpg" image-alt="Mini Hero Title1111">
         <span slot="header">ICare for Caregivers</span>
@@ -49,7 +56,7 @@ const Template = () => html`
         <span slot="text">This is some additional text to support the mini hero title.</span>
       </icare-web-minihero>
     </div>
-
+    </icare-section>
   </icare-page>
 `;
 

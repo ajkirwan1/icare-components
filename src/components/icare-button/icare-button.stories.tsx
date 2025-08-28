@@ -3,7 +3,7 @@ import { html } from 'lit';
 import 'icare-components'; // make sure this resolves to your built Stencil components
 
 export default {
-  title: 'Components/IcareButton',
+  title: 'Components/ICare Button',
   component: 'icare-button',
   argTypes: {
     label: { control: 'text' },
