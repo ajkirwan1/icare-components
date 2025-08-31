@@ -15,10 +15,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [icare-page](../icare-page)
-
 ### Depends on
 
 - [icare-header](../icare-header)
@@ -31,7 +27,6 @@ graph TD;
   icare-hero-new --> icare-button
   icare-header --> icare-logo
   icare-header --> icare-button
-  icare-page --> icare-hero-new
   style icare-hero-new fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,17 +1,15 @@
 @use '../../globals/styles/variables' as vars;
 
-button {
-  // cursor: var(--button-cursor);
-  // border: var(--button-border);
+a {
+  text-decoration: none;        /* remove native underline */
+  color: inherit;               /* inherit text color (variants will set color) */
+}
+
+button, a {
   border-radius: var(--icare-border-radius-xxl);
-  // font-weight: var(--button-font-weight);
-  // line-height: var(--button-line-height);
-  // font-family: var(--button-font-family);
   padding: var(--icare-button-padding-lg);
-  // font-size: var(--button-font-size-medium);
   background-color: var(--icare-color-green-primary);
   color: white;
-  // transition: background-color 0.3s ease;
   border: none;
   transition:
   background-color .18s ease,
@@ -28,28 +26,23 @@ button {
   }
 }
 
-:host([variant='secondary']) button {
+:host([variant='secondary']) button, a {
   background-color: white;
   color: var(--icare-color-green-primary);
   border: 1px solid rgb(221, 221, 221);
 }
 
 :host([variant='secondary']) button:hover:not(:disabled),
+:host([variant='secondary']) a:hover:not(:disabled),
 :host([variant='secondary']) button:focus-visible:not(:disabled) {
-  // background-image: linear-gradient(180deg, rgba(212, 212, 212, 0.05), rgba(0,0,0,0));
   border-color: var(--icare-color-green-secondary);
-  // box-shadow: 0 4px 12px -2px rgba(0,0,0,.15);
   color: black  ;
   border: 1px solid var(--icare-color-green-secondary);
   cursor: pointer;
 }
-
-// :host([size='small']) button {
-//   padding: var(--button-padding-small);
-//   font-size: var(--button-font-size-small);
-// }
-
-// :host([size='large']) button {
-//   padding: var(--button-padding-large);
-//   font-size: var(--button-font-size-large);
-// }
+:host([variant='secondary']) a:focus-visible:not(:disabled) {
+  border-color: var(--icare-color-green-secondary);
+  color: black  ;
+  border: 1px solid var(--icare-color-green-secondary);
+  cursor: pointer;
+}

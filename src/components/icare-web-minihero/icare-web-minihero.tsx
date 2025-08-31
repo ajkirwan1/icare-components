@@ -9,6 +9,7 @@ export class IcareWebMinihero {
 
   @Prop() imgSrc: string;
   @Prop() imgAlt = 'Mini Hero Title';
+  @Prop() href: string;
 
   render() {
     return (
@@ -20,10 +21,7 @@ export class IcareWebMinihero {
             <h3>
               <slot name="header"></slot>
             </h3>
-            <p>
-              <slot name="text"></slot>
-              </p>
-            <icare-button variant='secondary'>Click Me</icare-button>
+            <icare-button variant='secondary' href={this.href}><slot name="text"></slot></icare-button>
           </div>
         </section>
       </Host>

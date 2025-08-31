@@ -13,6 +13,7 @@ export namespace Components {
         "imgSrc": string;
     }
     interface IcareButton {
+        "href": string;
         /**
           * @default 'Click'
          */
@@ -21,6 +22,10 @@ export namespace Components {
           * @default 'medium'
          */
         "size": 'small' | 'medium' | 'large';
+        /**
+          * @default '_self'
+         */
+        "target"?: '_self' | '_blank';
         /**
           * @default 'primary'
          */
@@ -99,6 +104,7 @@ export namespace Components {
         "layout": 'text-left' | 'text-right' | 'text-top' | 'text-bottom';
     }
     interface IcareWebMinihero {
+        "href": string;
         /**
           * @default 'Mini Hero Title'
          */
@@ -244,6 +250,7 @@ declare namespace LocalJSX {
         "imgSrc"?: string;
     }
     interface IcareButton {
+        "href"?: string;
         /**
           * @default 'Click'
          */
@@ -252,6 +259,10 @@ declare namespace LocalJSX {
           * @default 'medium'
          */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * @default '_self'
+         */
+        "target"?: '_self' | '_blank';
         /**
           * @default 'primary'
          */
@@ -330,6 +341,7 @@ declare namespace LocalJSX {
         "layout"?: 'text-left' | 'text-right' | 'text-top' | 'text-bottom';
     }
     interface IcareWebMinihero {
+        "href"?: string;
         /**
           * @default 'Mini Hero Title'
          */

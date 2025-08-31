@@ -9,7 +9,9 @@ export class ICareLogo {
   render() {
     return (
       <Host>
-        <img src="images/icare-logo.svg" alt="iCare Logo" />
+       <a class="icare-logo__link" href="/" aria-label="Home" target='_self'>
+         <img src="/images/icare-logo.svg" alt="iCare Logo" />
+       </a>
       </Host>
     );
   }

@@ -21,8 +21,10 @@ export class IcareHeroNew {
       <icare-header></icare-header>
       </div>
       <div class='content'>
-        <h1>Simple. Transparent. Secure</h1>
-        <h2>ICare connects seniors and caregivers in one trusted place.</h2>
+        <h1><slot name='header-content'></slot></h1>
+        <h2>
+          <slot name='subheader-content'></slot>
+        </h2>
         <div class='cta'>
             <icare-button variant='primary'>Get Started</icare-button>
             <icare-button variant='secondary'>More Information</icare-button>

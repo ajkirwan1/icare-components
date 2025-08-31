@@ -9,8 +9,10 @@
 
 | Property  | Attribute | Description | Type                             | Default     |
 | --------- | --------- | ----------- | -------------------------------- | ----------- |
+| `href`    | `href`    |             | `string`                         | `undefined` |
 | `label`   | `label`   |             | `string`                         | `'Click'`   |
 | `size`    | `size`    |             | `"large" \| "medium" \| "small"` | `'medium'`  |
+| `target`  | `target`  |             | `"_blank" \| "_self"`            | `'_self'`   |
 | `variant` | `variant` |             | `"primary" \| "secondary"`       | `'primary'` |
 
 

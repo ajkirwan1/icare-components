@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h  } from '@stencil/core';
 
 @Component({
   tag: 'icare-page',
@@ -9,7 +9,7 @@ export class IcarePage {
   render() {
     return (
       <Host>
-        <icare-hero-new></icare-hero-new>
+        <slot name="hero-content"></slot>
         <main>
           <div class="content">
             <slot></slot>

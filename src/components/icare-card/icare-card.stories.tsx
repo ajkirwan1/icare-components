@@ -24,7 +24,18 @@ Outlined.args = {
   interactive: true,
 };
 
+export const Elevated = Template.bind({});
+Elevated.args = {
+  variant: 'elevated',
+  interactive: true,
+};
+
 export const Interactive = Template.bind({});
 Interactive.args = {
   interactive: true,
+};
+
+export const Flat = Template.bind({});
+Flat.args = {
+  variant: 'flat',
 };

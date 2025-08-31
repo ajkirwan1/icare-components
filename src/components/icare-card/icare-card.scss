@@ -3,12 +3,26 @@
 :host {
   display: block;
   @include mixins.card-surface();
-  // @include mixins.card-variant(outlined);
-  // @include mixins.export-css-vars()
 }
 
 :host([variant="outlined"]) { @include mixins.card-variant(outlined); }
 :host([variant="flat"])     { @include mixins.card-variant(flat); }
+
+/* NEW: elevated variant — stronger shadow, subtle lift */
+:host([variant="elevated"]) {
+  /* sensible defaults; consumers can override via CSS vars */
+  box-shadow: var(--icare-card-elevated-shadow, 0 8px 24px rgba(0,0,0,0.12));
+  transform: translateY(0);
+  /* keep the same background / border as default card-surface */
+}
+
+/* NEW: borderless variant — remove the border and optionally any base shadow */
+:host([variant="flat"]) {
+  border: none;
+  box-shadow: var(--icare-card-borderless-shadow, none);
+  background: var(--icare-card-borderless-bg, transparent);
+}
+
 
 :host([interactive]) {
   @include mixins.card-interactive();

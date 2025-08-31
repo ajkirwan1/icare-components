@@ -1,6 +1,8 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import path from 'path';
+import { reactOutputTarget } from '@stencil/react-output-target';
+
 
 export const config: Config = {
   namespace: 'icare-components',
@@ -11,6 +13,9 @@ export const config: Config = {
   ],
   globalStyle: 'src/globals/styles/_globals.scss',
   outputTargets: [
+    reactOutputTarget({
+      outDir: '../ICare/app/src/components/stencil-generated',
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
